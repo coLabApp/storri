@@ -1,7 +1,8 @@
 const cardBoard = document.querySelector('.indexCardBoard');
         // const btns = document.querySelectorAll('button');
-        const menu = document.querySelector('ul');
-        const newBtn = document.querySelector('.new')
+const menu = document.querySelector('ul');
+const newBtn = document.querySelector('.new')
+const scenes = document.querySelectorAll('.scene')
 
         // btns.forEach(btn =>{
         //     btn.addEventListener('click', (e) => {
@@ -38,16 +39,33 @@ const cardBoard = document.querySelector('.indexCardBoard');
                     <button class="fullScreen"><i class="fas fa-expand-alt"></i></button>
                     <button class="delete"><i class="fas fa-trash-alt"></i></button>
                 </div>
-                <textarea class="card" placeholder="write here"></textarea>
+                <div>
+                <textarea class="card textScreen" placeholder="write here"></textarea>
+                </div>
+                <button class="saveBtn">Save</button>
             <div>`
+
+            card.setAttribute('draggable' , true)
             const fullScreen = card.querySelector('.fullScreen');
             const deleteBtn = card.querySelector('.delete');
-            const cardContainer = card.querySelector('.cardContainer')
+            const cardContainer = card.querySelector('.cardContainer');
+            const saveBtn = card.querySelector('.saveBtn');
+            const textArea = card.querySelector('textarea')
             cardBoard.appendChild(card)
 
-            fullScreen.addEventListener('click', function () {
+            saveBtn.addEventListener('click', function () {
+                textArea.classList.toggle('textScreen')
                 card.classList.toggle('openModal')
                 cardContainer.classList.toggle('active')
+                saveBtn.classList.add('hideDiv')
+                
+            })
+
+            fullScreen.addEventListener('click', function () {
+                textArea.classList.toggle('textScreen')
+                card.classList.toggle('openModal')
+                cardContainer.classList.toggle('active')
+                saveBtn.classList.remove('hideDiv');
                 
             })
 
@@ -59,4 +77,8 @@ const cardBoard = document.querySelector('.indexCardBoard');
         function showMenu(){
             menu.classList.toggle('active');
             
+        }
+
+        function dragStart(){
+
         }

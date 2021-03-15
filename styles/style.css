@@ -141,12 +141,17 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
             border:1px solid #4f5052;
         }
 
+
+
+
         .tools {
-          background-color:#FFA69E;
+          /* background-color:#FFA69E; */
+          background-color: white;
           border-bottom: 1px solid #4f5052;
           display: flex;
           justify-content: flex-end;
           padding:10px;
+          padding-bottom:20px;
         }
         
         .tools button {
@@ -156,6 +161,19 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
           cursor: pointer;
           font-size: 1.5rem;
           margin-left: 0.5rem;
+        }
+
+        .saveBtn{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translate(-50px,-40px);
+            border:none;
+            font-size:2rem;
+            color:white;
+            background:#4f5052;
+            border-radius: 10px;
+
         }
 
 
@@ -183,18 +201,32 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
         .active{
             z-index:2;
             order:1;
-            height:100vh;
-            width:100vw;
+            width:75vw;
+            height:75vh;
+        }
+
+        .textScreen{
+            height: 500px;
+            width: 1000px;
+            position:fixed;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
         }
  
         
         .openModal{
          position:fixed;
-         left:0;
-         right:0;
-         bottom:0;
-         top:0;
-     }
+         left:50%;
+         top:50%;
+         transform: translate(-50%, -50%);
+        }
+
+     
+        .hideDiv{
+        display:none;
+        position:static;
+        }
 
 
      
